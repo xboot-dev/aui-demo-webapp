@@ -1,0 +1,80 @@
+.chart-center {
+	margin: 0 auto;
+	width: 50%;
+}
+
+.chart-layout {
+	margin-top: 20px;
+}
+
+.chart-container {
+	float: left;
+	position: relative;
+}
+
+.chart  {
+	display: block;
+}
+
+.chart-axisY {
+	position: absolute;
+	left: -40px;
+	height: 100%;
+	width: 40px;
+}
+
+.chart-axisY2 {
+	position: absolute;
+    left: 645px;
+    height: 100%;
+    width: 40px;
+    margin-top: -580px;
+}
+
+.chart-axisX {
+}
+
+.hover-detail-swatch {
+	/*float: right;*/
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 0 4px 0 0
+}
+
+.legend-container {
+	position: absolute;
+	right: 0;
+	bottom: 110px;
+	/*width: 0;*/
+}
+
+.legend {
+	display: inline-block;
+	position: relative;
+	/*left: 30px;*/
+}
+
+.rickshaw_graph .detail .x_label {
+	display: none;
+}
+
+.rickshaw_graph .detail .item {
+	line-height: 1.4;
+	padding: 0.5em;
+}
+
+.rickshaw_graph .detail .date {
+	color: #a0a0a0;
+}
+
+.rickshaw_graph .x_tick .title {
+	opacity: 1 !important;
+	bottom: -24px;
+	color: #646464;
+}
+
+.rickshaw_graph .y_ticks text {
+	opacity: 1 !important;
+	position: relative !important;
+}

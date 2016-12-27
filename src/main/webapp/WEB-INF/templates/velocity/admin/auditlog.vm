@@ -1,0 +1,12 @@
+<form action="$!{request.contextPath}/admin/auditlog" method="POST" class="aui">
+	<div class="field-group">					
+		<label for="eventId">
+			<span class="accesskey">E</span>vent Id
+		</label>
+		<input class="text long-field" id="eventId" name="eventId" type="text" size="20" tabindex="1" accesskey="e" autofocus="autofocus" value="$!{eventId}">
+	</div>
+    <div class="buttons-container">
+    	<input class="aui-button aui-button-primary submit" type="submit" value="Verify" id="btnSubmit">
+    </div>
+    <input name="redir" type="hidden" value="$!{redir}" />
+</form>

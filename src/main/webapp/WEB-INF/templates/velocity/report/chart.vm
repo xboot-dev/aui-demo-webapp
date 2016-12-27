@@ -1,0 +1,24 @@
+<div id="chart$!{chartId}_layout" class="chart-layout">
+	<h2>$!{chartConfig.chartTitle}</h2>
+	<p>&nbsp;</p>
+	<div id="chart$!{chartId}_container" class="chart-container">
+		<div id="axisY$!{chartId}" class="chart-axisY"></div>
+		<div id="chart$!{chartId}" class="chart"></div>
+		<div id="axisX$!{chartId}" class="chart-axisX"></div>
+		<div id="legend$!{chartId}_container" class="legend-container">
+			<div id="smoother$!{chartId}" class="legend-smoother" title="Smoothing"></div>
+			<div id="legend$!{chartId}" class="legend"></div>
+		</div>
+		<div id="slider$!{chartId}" class="chart-slider"></div>
+		<input type="hidden" id="chartType" value="$!{chartConfig.chartType}" />
+		<input type="hidden" id="chartWidth" value="$!{chartConfig.chartWidth}" />
+		<input type="hidden" id="chartHeight" value="$!{chartConfig.chartHeight}" />
+		<input type="hidden" id="chartStack" value="$!{chartConfig.chartStack}" />
+		<input type="hidden" id="chartDataUrl" value="$!{chartConfig.chartDataUrl}" />
+		<input type="hidden" id="chartLegend" value="$!{chartConfig.chartLegend}" />
+		<input type="hidden" id="chartHoverDetail" value="$!{chartConfig.chartHoverDetail}" />
+		<input type="hidden" id="chartHoverDetailAxisXTitle" value="$!{chartConfig.chartHoverDetailAxisXTitle}" />
+		<input type="hidden" id="chartAxisXMode" value="$!{chartConfig.chartAxisXMode}" />
+		<input type="hidden" id="chartAxisXTimeUnit" value="$!{chartConfig.chartAxisXTimeUnit}" />
+	</div>
+</div>

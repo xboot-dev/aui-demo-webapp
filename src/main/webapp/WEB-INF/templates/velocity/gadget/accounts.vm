@@ -1,0 +1,15 @@
+$portalResourceManager.requireResourcesForContext("nsys.portal.admin")
+
+<section class="admin-section">
+	<h3>$!{gadget.displayName}</h3>
+	<ul class="overview-links">
+		<li>
+			<a href="/admin" class="icon-admin-users">Users</a>
+			<span class="description">Edit individual user details, passwords and groups membership.</span>
+		</li>
+		<li>
+			<a href="/admin" class="icon-admin-groups">Groups</a>
+			<span class="description">Create groups and manage the users within each group.</span>
+		</li>
+	</ul>
+</section>

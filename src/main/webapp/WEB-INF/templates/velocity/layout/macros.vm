@@ -1,0 +1,174 @@
+## --==[ Macros for NavigationItem rendering ]==-- [BEGIN]
+
+#macro (navigationItems $id $location $context)
+<!-- Rendering navigationItems for location: $location -->
+<ul class="$!{id}">
+  #if ($location == "system.top.navigation.appswitcher")
+      #appSwitcherItems($location, $context)
+  #else
+    #if ($location == "system.top.navigation.bar")
+    	#foreach($section in $portalNavigation.getSectionsByLocation($!{location}))
+      		<li>#navigationBarItem($section, $context)</li>
+    	#end
+    #else
+      	#renderSearchField($context)
+    	#foreach($item in $portalNavigation.getDisplayableItemsBySection($!{location}, $context))
+      		<li>#navigationItem($item, $context)</li>
+		#end
+		#if ($location == "header.links")
+			#foreach($section in $portalNavigation.getDisplayableSectionsByLocation($!{location}, $context))
+				<li>#navigationHeaderItem($section, $context)</li>
+			#end
+		#end
+    #end    
+  #end  
+</ul>
+#end
+
+#macro (navigationItem $item $context)
+	#set ($html = "$!{item.label}")
+	#set ($attrs = "")
+
+	#if ($!{item.styleClass} == "has-icon")
+		#set ($iconClass = $item.params.get("iconClass"))
+		#set ($html = "<span class='$!{iconClass}'>$!{html}</span>")
+
+	#elseif ($!{item.styleClass} == "portal-dialog")
+		#set ($attrs = $item.params.get("portalDialog"))
+	#end
+
+	<a id="$!{item.key}"
+	   href="$!{item.link}"
+	   class="$!{item.styleClass}" title="$!{item.description}" $!{attrs}>$!{html}</a>
+#end
+
+#macro (navigationBarItem $section $context)
+<a class="aui-nav-link aui-dropdown2-ajax aui-dropdown2-trigger"
+   href=""
+   id="$!{section.key}"
+   aria-haspopup="true"
+   aria-owns="$!{section.key}-content"
+   aria-controls="$!{section.key}-content" title="$!{section.description}">$!{section.label}</a>
+
+<div id="$!{section.key}-content"
+     class="aui-dropdown2 aui-style-default aui-dropdown2-in-header"
+     data-aui-dropdown2-ajax-key="$!{section.key}"
+     data-dropdown2-alignment="left"
+     aria-hidden="true">
+           
+   <div class="aui-dropdown2-section">
+      <ul class="aui-list-truncate" id="$!{section.key}_main">
+          
+        #foreach($item in $portalNavigation.getDisplayableItemsBySection($section.getSpace(), $context))
+          <li id="$!{item.key}">
+            <a href="$!{item.link}" id="$!{item.key}_linkId" title="$!{item.description}">$!{item.label}</a>
+          </li>
+        #end
+
+      </ul>
+   </div>
+</div>
+#end 
+
+#macro (navigationHeaderItem $section $context)
+<a class="aui-dropdown2-trigger" 
+   href="" 
+   id="$!{section.key}" 
+   aria-haspopup="true" 
+   aria-owns="$!{section.key}-content"  
+   aria-controls="$!{section.key}-content" title="$!{section.description}">
+   
+   #set ($iconClass = $section.params.get("iconClass"))
+   
+   #if ($!{iconClass} == "has-avatar")
+	<div class="aui-avatar aui-avatar-small">
+		<div class="aui-avatar-inner">
+			<img src="$!{request.contextPath}/resources/images/avatar-default-16_xsmall.png"></img>
+		</div>
+	</div>
+   #else
+	<span class="$!{iconClass}">$!{section.label}</span><span class="aui-icon-dropdown"></span>
+   #end   
+</a>
+<div class="aui-dropdown2 aui-style-default aui-dropdown2-in-header" 
+	 id="$!{section.key}-content" aria-hidden="true" 
+	 style="display: none; top: 40px; min-width: 160px; left: 1213px;">
+	 <div class="aui-dropdown2-section">
+		<ul>
+			#foreach($item in $portalNavigation.getDisplayableItemsBySection($section.getSpace(), $context))
+				<li id="$!{item.key}">
+					<a href="$!{item.link}" id="$!{item.key}_linkId" title="$!{item.description}">$!{item.label}</a>
+				</li>
+			#end
+		</ul>
+	</div>
+</div>
+#end 
+
+#macro (appSwitcherItems $location $context)
+  <a class="aui-dropdown2-trigger app-switcher-trigger"
+     id="unity_appswitcher"
+     aria-haspopup="true"
+     aria-owns="unity_appswitcher-content"
+     aria-controls="unity_appswitcher-content">
+    <span class="aui-icon aui-icon-small aui-iconfont-appswitcher">Linked Applications</span>
+  </a>
+           
+  <div id="unity_appswitcher-content" 
+       class="aui-dropdown2 aui-style-default aui-dropdown2-in-header" 
+       data-aui-dropdown2-ajax-key="unity_appswitcher" 
+       data-dropdown2-alignment="left" 
+       aria-hidden="true">
+    <div class="aui-dropdown2-section">
+      <ul class="aui-list-truncate" id="unity_appswitcher_main">
+                  
+        #foreach($item in $portalNavigation.getDisplayableItemsBySection($!{location}, $context))
+          <li id="$!{item.key}">
+            <a href="$!{item.link}" id="$!{item.key}">$!{item.label}</a>
+          </li>
+        #end
+              
+      </ul>
+    </div>
+  </div>           
+#end
+
+#macro (renderSearchField $context)
+  <li>
+    <form action="/search" method="post" class="aui-quicksearch">
+      <label for="quicksearchid" class="assistive">Search</label>
+      <input id="quicksearchid" class="search" type="text" placeholder="Search" name="quicksearchname">
+    </form>
+  </li>
+#end 
+
+## --==[ Macros for NavigationItem rendering ]==-- [END]
+
+## --==[ Macros for ButtonItem rendering ]==-- [BEGIN]
+
+#macro (buttonItems $location $context)
+<div class="aui-buttons">
+  	#foreach($item in $portalNavigation.getDisplayableItemsBySection($!{location}, $context))
+		#buttonItem($item, $context)
+	#end
+</div>
+#end
+
+#macro (buttonItem $item $context)
+	#set ($html = "<span>$!{item.label}</span>")
+	#set ($attrs = "")
+
+	#if ($!{item.styleClass} == "has-icon")
+		#set ($iconClass = $item.params.get("iconClass"))
+		#set ($html = "<span class='$!{iconClass}'></span>$!{item.label}")
+
+	#elseif ($!{item.styleClass} == "portal-dialog")
+		#set ($attrs = $item.params.get("portalDialog"))
+	#end
+
+    <a id="$!{item.key}"
+	   href="$!{item.link}"
+	   class="aui-button $!{item.styleClass}" title="$!{item.description}" $!{attrs}>$!{html}</a>
+#end
+
+## --==[ Macros for ButtonItem rendering ]==-- [END]

@@ -1,0 +1,142 @@
+#parse ("macros.vm")
+#parse ("layout/macros.vm")
+
+#if ($!{displayName})
+	#set($pageTitle = "$!{portalName} - $!{displayName}")
+#else
+	#set($pageTitle = "$!{portalName}")
+#end
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+	#foreach($metadata in $portalResourceManager.renderMetadata())
+		$!{metadata}
+	#end
+
+    <title>$!{pageTitle}</title>
+	
+	<!-- AUI 5.4.3 --==[BEGIN]==-- -->
+	<link rel="stylesheet" href="$!{request.contextPath}/resources/aui/css/aui.css" media="all">
+	<link rel="stylesheet" href="$!{request.contextPath}/resources/aui/css/aui-experimental.css" media="all">
+	<!--[if IE 9]><link rel="stylesheet" href="$!{request.contextPath}/resources/aui/css/aui-ie9.css" media="all"><![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="$!{request.contextPath}/resources/aui/js/aui-dependencies.js"></script>
+	<script src="$!{request.contextPath}/resources/aui/js/aui.js"></script>
+	<script src="$!{request.contextPath}/resources/aui/js/aui-experimental.js"></script>
+	<script src="$!{request.contextPath}/resources/aui/js/aui-soy.js"></script>
+	<!-- AUI 5.4.3 --==[END]==-- -->
+
+	<!-- Blank Favicon -->
+	<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" />
+
+	<link rel="stylesheet" href="$!{request.contextPath}/resources/css/decorator.css" media="all">
+	<script src="$!{request.contextPath}/resources/js/main.js"></script>
+
+	#foreach($resource in $portalResourceManager.renderRequiredResources())
+		$!{resource}
+	#end
+</head>
+
+<body id="aui-flatpack" class="aui-layout aui-theme-default $!{templateStyleClass}">
+    <div id="page">
+        <header id="header" role="banner">
+        	#parse ("layout/header.vm")
+        </header>
+
+        <section id="content" role="main">
+        	#if ($!{headerDisplayable})
+			<header class="aui-page-header">
+				<div class="aui-page-header-inner">
+					#if ($!{headerImage})
+					<div class="aui-page-header-image">
+						<div class="aui-avatar aui-avatar-xlarge aui-avatar-project">
+							<div class="aui-avatar-inner">
+								<img src="$!{headerImage}" alt="$!{displayName}">
+							</div>
+						</div>
+					</div>
+					#end
+					<div class="aui-page-header-main">
+						<h2>$!{displayName}</h2>
+					</div>
+					#if ($!{headerActions})
+					<div class="aui-page-header-actions">
+						#buttonItems($!{headerActions}, $context)
+					</div>
+					#end
+				</div>
+			</header>
+			#end
+			
+			#if ($!{headerNavigationContent})
+			<nav class="aui-navgroup aui-navgroup-horizontal">
+        		<div class="aui-navgroup-inner">
+            		<div class="aui-navgroup-primary">
+						$!{headerNavigationContent}
+            		</div>
+					###if ($!{userIsAdmin} || $!{userIsSystemAdmin})
+					##<div class="aui-navgroup-secondary">
+					##	<ul class="aui-nav">
+					##		<li>
+					##			<a href="#ucwSettingsDropdown" class="aui-dropdown2-trigger" aria-owns="ucw-settings-dropdown" aria-haspopup="true">
+					##				<span class="aui-icon aui-icon-small aui-iconfont-configure">Administration</span>
+					##				<span class="aui-icon-dropdown"></span>
+					##			</a>
+					##		</li>
+					##	</ul>
+					##</div>
+					##<div class="aui-dropdown2 aui-style-default" id="ucw-settings-dropdown" data-dropdown2-alignment="right">
+					##	#set ($secondaryNavContentWithHtml = $!{secondaryNavContent})
+					##	$!{secondaryNavContentWithHtml}
+					##</div>
+					###end
+        		</div>
+    		</nav>
+    		#end
+
+          	#if ($!{blankScreen})
+				$!{screen_content}
+          	#else    
+          	<div class="aui-page-panel">
+				<div class="aui-page-panel-inner">
+				
+        			#if ($!{isNavigation})
+					<div class="aui-page-panel-nav">
+						<nav class="aui-navgroup aui-navgroup-vertical">
+							<div class="aui-navgroup-inner">
+								#foreach($section in $portalNavigation.getSectionsByLocation($!{navigationLocation}))
+									<div class="aui-nav-heading">$!{section.label}</div>
+									<ul class="aui-nav">
+									#foreach($item in $portalNavigation.getDisplayableItemsBySection($section.getSpace(), $context))
+										<li>#navigationItem($item, $context)</li>
+									#end
+                            		</ul>
+								#end
+							</div>
+						</nav>
+					</div>
+					#end
+					
+					<section class="aui-page-panel-content">
+        				$!{screen_content}
+					</section>
+			
+					#if ($!{isSidebar})
+					<aside class="aui-page-panel-sidebar $!{sidebarStyleClass}">
+						$!{sidebarContent}
+					</aside>
+					#end
+        		</div>
+    		</div>
+    		#end
+        </section>
+     
+        <footer id="footer" role="contentinfo" class="portal-footer">
+        	#parse ("layout/footer.vm")
+        </footer>
+    </div>		
+</body>
+</html>

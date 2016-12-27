@@ -1,0 +1,13 @@
+<div class="aui-page-panel">
+	<div class="aui-page-panel-inner">
+		<section class="aui-page-panel-content">
+			<header>
+				<h1>Logout</h1>
+			</header>
+			<div class="aui-message info">
+				<p class="title"><span class="aui-icon icon-info"></span><strong>You are now logged out. Any automatic login has also been stopped.</strong></p>
+                <p>Didn't mean to log out? <a href="$!{request.contextPath}/auth/login">Log in again.</a></p>
+            </div>
+		</section>
+	</div>
+</div>

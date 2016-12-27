@@ -1,0 +1,18 @@
+$portalResourceManager.requireResourcesForContext("projects")
+
+<div class="welcome-nav getting-started welcome-nav-small">
+	<h3><a href="http://doc.nsys.org/display/NSYS/Nsys+Portal">Getting started</a></h3>
+	<p>All the information you need to get started in Portal.</p>
+</div>
+<div class="welcome-nav analysis welcome-nav-small">
+	<h3><a href="http://doc.nsys.org/display/NSYS/Nsys+Cloud+Warehouse">Data Analysis</a></h3>
+	<p>Learn about Best Practices in data gathering and analysis.</p>
+</div>
+<div class="welcome-nav development welcome-nav-small">
+	<h3><a href="http://doc.nsys.org/display/NSYS/Nsys+Portal+Plugin">API</a></h3>
+	<p>Customise Portal via the API and plugin framework.</p>
+</div>
+<div class="welcome-nav administration welcome-nav-small">
+	<h3><a href="http://doc.nsys.org/display/NSYS/Nsys+Portal">Administering Portal</a></h3>
+	<p>Configure Portal for your organization.</p>
+</div>

@@ -1,0 +1,39 @@
+<nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+	<div class="aui-header-inner">
+		#if ($headerBeforeContent)
+		<div class="aui-header-before">
+			$!{headerBeforeContent}
+		</div>
+		#end
+
+		#set ($url = $!{request.contextPath})
+		
+		#if ($!{url} == "")
+			#set ($url = "/")
+		#end
+
+        <div class="aui-header-primary">
+        	<h1 id="logo" class="aui-header-logo">
+        		<a href="$!{url}">
+        			<span class="aui-header-logo-device"></span>
+        			<span class="aui-header-logo-text">$!{portalLogoText}</span>
+        		</a>
+        	</h1>
+        	#if ($primaryNavContent)
+        		$!{primaryNavContent}
+        	#end
+        </div>
+
+		#if ($secondaryNavContent)
+		<div class="aui-header-secondary">
+			$!{secondaryNavContent}
+		</div>
+        #end
+
+		#if ($headerAfterContent)
+		<div class="aui-header-after">
+			$!{headerAfterContent}
+		</div>
+		#end
+	</div>
+</nav>

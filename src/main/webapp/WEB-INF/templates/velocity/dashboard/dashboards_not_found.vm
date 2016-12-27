@@ -1,0 +1,13 @@
+<div class="aui-page-panel">
+	<div class="aui-page-panel-inner">
+		<section class="aui-page-panel-content">
+			<header>
+				<h1>Dashboard not found!</h1>
+			</header>
+			<div class="aui-message warning">
+				<p class="title"><span class="aui-icon icon-warning"></span><strong>Requested dashboard <i>$!{viewId}</i> is currently unavailable. Please try it later.</strong></p>
+                <p>Do you want to see available dashboards? Go to <a href="$!{request.contextPath}/dashboard/manage">manage dashboards</a>.</p>
+            </div>
+		</section>
+	</div>
+</div>

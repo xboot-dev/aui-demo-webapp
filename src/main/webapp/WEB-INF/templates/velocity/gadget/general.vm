@@ -1,0 +1,23 @@
+$portalResourceManager.requireResourcesForContext("nsys.portal.admin")
+
+<section class="admin-section">
+    <h3>$!{gadget.displayName}</h3>
+    <ul class="overview-links">
+        <li>
+            <a href="/admin" class="icon-admin-avatars">Overview</a>
+            <span class="description">General overview</span>
+        </li>
+        <li>
+            <a href="/admin/system-info" class="icon-admin-avatars">System Info</a>
+            <span class="description">System information about Nsys Platform, Java, OS, etc.</span>
+        </li>
+        <li>
+            <a href="/admin" class="icon-admin-licensing">Licensing</a>
+            <span class="description">View and configure license information.</span>
+        </li>
+        <li>
+            <a href="/admin" class="icon-admin-avatars">Node Admin Console</a>
+            <span class="description">Nsys Daemon administration console.</span>
+        </li>
+    </ul>
+</section>

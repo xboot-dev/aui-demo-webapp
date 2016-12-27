@@ -1,0 +1,20 @@
+<table class="aui">
+	<thead>
+		<tr>
+			<th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+   	<tbody>
+        #foreach ($dashboard in $dashboards)
+        <tr>
+            <td>$!{dashboard.name}</td>
+            <td>$!{dashboard.description}</td>
+            <td>
+				<a href="$!{request.contextPath}/dashboard/view/$!{dashboard.viewId}">View</a>
+			</td>
+        </tr>
+        #end
+    </tbody>
+</table>

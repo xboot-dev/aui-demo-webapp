@@ -1,0 +1,90 @@
+/*
+ * CSS Styles for Projects Sidebar
+ *
+ */
+
+.projects-sidebar {
+	width: 340px;
+}
+
+.projects-sidebar .welcome-nav {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background-color: #ffffff;
+	background-repeat: no-repeat;	
+	background-size: 48px 48px;
+	background-position: 232px 50px;
+	border: 0;
+	margin: 0;
+	padding-left: 0;
+	padding-right: 68px;
+}
+
+.projects-sidebar .welcome-nav h3 {
+	text-align: left;
+	padding: 0;
+	color: #333333;
+	font-weight: normal;
+}
+
+.projects-sidebar .welcome-nav p {
+	padding: 0;
+	color: #333333;
+}
+
+.welcome-nav-small {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	padding: 20px;
+	width: 300px;
+	min-height: 120px;
+}
+
+.welcome-nav-small h3 {
+	font-size: 16px;
+}
+
+.welcome-nav-large {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	padding: 40px;
+	width: 980px;
+	min-height: 200px;
+}
+
+.welcome-nav-large h3 {
+	font-size: 24px;
+}
+
+.welcome-nav-large p {
+	margin-top: 20px;
+}
+
+.projects-sidebar .welcome-nav.getting-started {
+	background-image: url('../images/icons/icon-help-getting-started.svg');
+}
+
+.projects-sidebar .welcome-nav.analysis {
+	background-image: url('../images/icons/icon-help-analysis.svg');
+}
+
+.projects-sidebar .welcome-nav.development {
+	background-image: url('../images/icons/icon-help-api.svg');
+}
+
+.projects-sidebar .welcome-nav.administration {
+	background-image: url('../images/icons/icon-help-admin.svg');
+}
+
+.projects-sidebar .welcome-nav + .welcome-nav {
+	border-top: 1px solid #cccccc;
+}

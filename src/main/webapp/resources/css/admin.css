@@ -1,0 +1,117 @@
+.admin .admin-section {
+	margin: 0 16px 24px 0;
+}
+
+.admin .admin-section h3 {
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	font-weight: normal;
+	font-size: 20px;
+	border-bottom: 1px solid #DDD;
+}
+
+.admin .admin-section .overview-links {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.admin .admin-section .overview-links li {
+	padding-bottom: 20px;
+}
+
+.admin .admin-section .overview-links li > a {
+	color: #3b73af;
+	display: inline-block;
+	font-size: 16px;
+	line-height: 16px;
+	padding: 0 0 0 26px;
+	background-repeat: no-repeat;
+	background-image: url('../images/icons/icons-admin.png');
+}
+
+.admin .admin-section .overview-links li > a.has-icon {
+	background-image: none;
+	padding-left: 0;
+}
+
+.admin .admin-section .overview-links li > a span.icon {
+	vertical-align: middle;
+	padding-right: 8px;
+	display: inline-block;
+	line-height: 16px;
+}
+
+.admin .admin-section .overview-links li > a + .description {
+	margin-top: 5px;
+}
+
+.admin .admin-section .overview-links .aui-icon {
+	padding: 0 10px 0 0;
+	vertical-align: text-bottom;
+	color: #707070;
+}
+
+.admin .admin-section .overview-links li > .description {
+	display: block;
+	color: #707070;
+	padding: 0 0 0 26px;
+}
+
+.admin .admin-section .overview-links li > .admin-database-hsqldb + .description,
+.admin .admin-section .overview-links li > .admin-mailserver-unconfigured + .description {
+	color: #DB963D;
+}
+
+/* Admin overview icons */
+.icon-admin-serversettings {
+	background-position: 0 0;
+}
+
+.icon-admin-authentication {
+	background-position: 0 -32px;
+}
+
+.icon-admin-applinks {
+	background-position: 0 -64px;
+}
+
+.icon-admin-groups {
+	background-position: 0 -96px;
+}
+
+.icon-admin-i18n {
+	background-position: 0 -128px;
+}
+
+.icon-admin-licensing {
+	background-position: 0 -160px;
+}
+
+.icon-admin-mailserver {
+	background-position: 0 -192px;
+}
+
+.icon-admin-permissions {
+	background-position: 0 -224px;
+}
+
+.icon-admin-plugins {
+	background-position: 0 -256px;
+}
+
+.icon-admin-systeminfo {
+	background-position: 0 -288px;
+}
+
+.icon-admin-userdirectory {
+	background-position: 0 -320px;
+}
+
+.icon-admin-users {
+	background-position: 0 -352px;
+}
+
+.icon-admin-database {
+	background-position: 0 -384px;
+}

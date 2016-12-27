@@ -1,0 +1,15 @@
+<br/>
+<p>
+	$!{portalName} v$!{portalVersion} (build $!{portalBuildNumber}) 
+      
+	#set($items = $portalNavigation.getItemsBySection("footer.links"))
+	#set($first = true)
+      
+	#foreach($item in $items)
+		| #navigationItem($item, $context)
+	#end
+	
+	<br/><br/>
+	$!{portalCopyright}
+	<br/><br/>	
+</p>

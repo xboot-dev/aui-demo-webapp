@@ -1,0 +1,30 @@
+<table class="aui">
+    <thead>
+        <tr>
+            <th id="basic-number">#</th>
+            <th id="basic-name">Name</th>
+            <th id="basic-platform">Platform</th>
+            <th id="basic-ipaddress">IP Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td headers="basic-number">1</td>
+            <td headers="basic-name">nsys-pi</td>
+            <td headers="basic-platform"><span class="aui-lozenge aui-lozenge-current">Raspberry Pi</span></td>
+            <td headers="basic-ipaddress">10.100.20.50</td>
+        </tr>
+        <tr>
+            <td headers="basic-number">2</td>
+            <td headers="basic-name">nsys-arduino</td>
+            <td headers="basic-platform">Arduino</td>
+            <td headers="basic-ipaddress">10.200.20.51</td>
+        </tr>
+        <tr>
+            <td headers="basic-number">3</td>
+            <td headers="basic-name">nsys-linux</td>
+            <td headers="basic-platform">Debian / Ubuntu Linux</td>
+            <td headers="basic-ipaddress">10.200.20.52</td>
+        </tr>
+    </tbody>
+</table>

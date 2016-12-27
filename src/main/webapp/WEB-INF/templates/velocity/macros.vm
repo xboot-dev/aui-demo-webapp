@@ -1,0 +1,25 @@
+## --==[ Macros for Messages rendering ]==-- [BEGIN]
+
+## Available message types: success, error, warning, hint and generic
+
+#macro (showMessage $type $title $message $closeable)
+
+#set ($closeableClass = "")
+
+#if ($!{closeable})
+	#set ($closeableClass = " closeable shadowed")
+#end
+
+<div class="aui-message $!{type}$!{closeableClass}">
+	<p class="title">
+		<span class="aui-icon icon-$!{type}"></span>
+		<strong>$!{title}</strong>
+	</p>
+	<p>$!{message}</p>
+	#if ($!{closeable})
+	<span class="aui-icon icon-close" role="button" tabindex="0"></span>
+	#end
+</div>
+#end
+
+## --==[ Macros for Messages rendering ]==-- [END]

@@ -1,0 +1,41 @@
+<div class="aui-page-panel">
+	<div class="aui-page-panel-inner">
+		<section class="aui-page-panel-content">
+			<header>
+				<h1>$!{loginTitle}</h1>
+			</header>
+			<form action="$!{loginUrl}" method="POST" class="aui top-label">
+				#if ($!{showError})
+				<div class="aui-message error">
+					<p>
+						<span class="aui-icon icon-error"></span>
+						$!{errorMessage}
+					</p>
+				</div>
+				#end
+				<div class="field-group">					
+					<label for="login_id">
+						<span class="accesskey">U</span>sername
+					</label>
+					<input class="text full-width-field" id="login_id" name="login" type="text" size="25" tabindex="1" accesskey="u" autofocus="autofocus" value="">
+				</div>
+                <div class="field-group">
+                	<label for="password_id">
+                		<span class="accesskey">P</span>assword
+                	</label>
+                	<input class="text full-width-field" id="password_id" name="password" type="password" size="25" tabindex="2" accesskey="p" value="">
+                </div>
+                <fieldset class="group">
+                	<input class="checkbox" id="cookie_id" name="cookie" type="checkbox" tabindex="3" accesskey="r" value="true">
+                	<label for="cookie_id">
+                		<span class="accesskey">R</span>emember me
+                	</label>
+                </fieldset>
+                <div class="buttons-container">
+                	<input class="aui-button aui-button-primary submit" type="submit" value="Login" id="btn_login">
+                </div>
+                <input name="redir" type="hidden" value="$!{redir}" />
+			</form>
+		</section>
+	</div>
+</div>

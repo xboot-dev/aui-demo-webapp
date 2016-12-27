@@ -1,0 +1,102 @@
+.app-switcher-trigger {
+	opacity: .8;
+	cursor: pointer;
+	box-sizing: border-box;
+	float: left;
+	height: 40px;
+	list-style: disc;
+	perspective-origin: 18px 20px;
+	width: 36px;
+	font-family: Arial,sans-serif;
+	border-image: stretch
+}
+
+.app-switcher-trigger:hover {
+	opacity: 1
+}
+
+.app-switcher-trigger:after {
+	content: normal!important
+}
+
+.portal-footer {
+    clear: both;
+    text-align: center;
+}
+
+.portal-dialog2-red .aui-dialog2-header {
+	background-color: #d04437; /* Red */
+	color: #fff
+}
+
+.portal-dialog2-red .aui-dialog2-header .aui-dialog2-header-actions a,
+.portal-dialog2-red .aui-dialog2-header .aui-dialog2-header-close,
+.portal-dialog2-red .aui-dialog2-header .aui-dialog2-header-main,
+.portal-dialog2-red .aui-dialog2-header .aui-dialog2-header-secondary a {
+	color: inherit
+}
+
+.portal-dialog2-yellow .aui-dialog2-header {
+	background-color: #f6c342; /* Yellow */
+	color: #fff
+}
+
+.portal-dialog2-yellow .aui-dialog2-header .aui-dialog2-header-actions a,
+.portal-dialog2-yellow .aui-dialog2-header .aui-dialog2-header-close,
+.portal-dialog2-yellow .aui-dialog2-header .aui-dialog2-header-main,
+.portal-dialog2-yellow .aui-dialog2-header .aui-dialog2-header-secondary a {
+	color: inherit
+}
+
+.portal-dialog2-green .aui-dialog2-header {
+	background-color: #8eb021; /* Lime green */
+	color: #fff
+}
+
+.portal-dialog2-green .aui-dialog2-header .aui-dialog2-header-actions a,
+.portal-dialog2-green .aui-dialog2-header .aui-dialog2-header-close,
+.portal-dialog2-green .aui-dialog2-header .aui-dialog2-header-main,
+.portal-dialog2-green .aui-dialog2-header .aui-dialog2-header-secondary a {
+	color: inherit
+}
+
+.portal-dialog2-blue .aui-dialog2-header {
+	background-color: #3b7fc4; /* Bright blue */
+	color: #fff
+}
+
+.portal-dialog2-blue .aui-dialog2-header .aui-dialog2-header-actions a,
+.portal-dialog2-blue .aui-dialog2-header .aui-dialog2-header-close,
+.portal-dialog2-blue .aui-dialog2-header .aui-dialog2-header-main,
+.portal-dialog2-blue .aui-dialog2-header .aui-dialog2-header-secondary a {
+	color: inherit
+}
+
+.gadget-group {
+	display: table;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border-spacing: 35px 13px;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.gadget-group > .gadget-item {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: table-cell;
+	margin: 0;
+	vertical-align: top;
+}
+
+.gadget-layout .gadget-item {
+    background: #f5f5f5;
+    /*background: #F0F0F0;*/
+    /*background: #FFFF99;*/
+    /*background: #FFFFCC;*/
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}

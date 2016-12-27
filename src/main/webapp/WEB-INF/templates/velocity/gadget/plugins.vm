@@ -1,0 +1,15 @@
+$portalResourceManager.requireResourcesForContext("nsys.portal.admin")
+
+<section class="admin-section">
+	<h3>$!{gadget.displayName}</h3>
+	<ul class="overview-links">
+		<li>
+			<a href="/admin" id="upm-marketplace-link" title="Find and install add-ons from the Nsys Marketplace.">Find new add-ons</a>
+			<span class="description">Find and install add-ons from the Nsys Marketplace.</span>
+		</li>
+		<li>
+			<a href="/admin" id="upm-admin-link" title="Install, update, enable, and disable add-ons.">Manage add-ons</a>
+			<span class="description">Install, update, enable, and disable add-ons.</span>
+		</li>
+	</ul>
+</section>
