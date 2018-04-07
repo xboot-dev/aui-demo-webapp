@@ -1,0 +1,32 @@
+image: docker:latest
+
+stages:
+  - build-webapp
+  - build-image
+
+variables:
+  BUILD_NUMBER: 1.0.0.$CI_PIPELINE_ID
+
+before_script:
+  - echo BUILD_NUMBER=$BUILD_NUMBER
+
+build-webapp:
+  image: maven:3-jdk-8
+  stage: build-webapp
+  before_script:
+    - echo BUILD_NUMBER=$BUILD_NUMBER
+    - export WEBAPP_OPTS="-Dbuild.number=${BUILD_NUMBER}"
+  script: mvn clean resources:resources install deploy $WEBAPP_OPTS -U
+  artifacts:
+    paths:
+      - target/aui-demo-webapp.war
+
+build-image:
+  stage: build-image
+  dependencies:
+    - build-webapp
+  before_script:
+    - docker login -u "$DOCKER_REGISTRY_USER" -p "$DOCKER_REGISTRY_PWD"
+  script:
+    - docker build --pull --no-cache -t xboot/aui-demo .
+    - docker push xboot/aui-demo
