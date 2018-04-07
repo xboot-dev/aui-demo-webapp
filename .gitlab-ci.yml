@@ -16,7 +16,7 @@ build-webapp:
   before_script:
     - echo BUILD_NUMBER=$BUILD_NUMBER
     - export WEBAPP_OPTS="-Dbuild.number=${BUILD_NUMBER}"
-  script: mvn clean resources:resources install deploy $WEBAPP_OPTS -U
+  script: mvn clean resources:resources install $WEBAPP_OPTS -U
   artifacts:
     paths:
       - target/aui-demo-webapp.war
