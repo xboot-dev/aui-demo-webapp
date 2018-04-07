@@ -8,7 +8,7 @@
 
 ## Description
 
-AUI Demo is an example of AUI (Atlassian User Interface) implementation in a web application based on Spring framework.
+[AUI Demo](https://github.com/xboot-dev/aui-demo-webapp) is an example of AUI (Atlassian User Interface) implementation in a web application based on Spring framework.
 The code is based on source code of [Nsys Portal](https://nsys.org).
 
 <img src="doc/images/aui-demo-01.png" width="700" height="410" alt="AUI Demo Screenshot" />
