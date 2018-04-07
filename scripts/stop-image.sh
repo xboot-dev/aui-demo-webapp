@@ -3,7 +3,7 @@
 ##########################################################################
 #                                                                        #
 # AUI Demo - Docker Stop Image Script.                                   #
-# Copyright 2016 Tomas Hrdlicka <tomas@hrdlicka.co.uk>.                  #
+# Copyright 2016, 2018 Tomas Hrdlicka <tomas@hrdlicka.co.uk>.            #
 # All rights reserved.                                                   #
 #                                                                        #
 # Web: https://tomas.hrdlicka.co.uk                                      #
@@ -15,7 +15,7 @@ DOCKER_CMD=docker
 DOCKER_IMAGE_DIR="$( cd "$(dirname "$0")" ; pwd -P )/.."
 DOCKER_IMAGE_NAME=xboot/aui-demo
 DOCKER_IMAGE_TAG=1.0.0
-DOCKER_CONTAINER_NAME=${DOCKER_IMAGE_NAME////-}-dev
+DOCKER_CONTAINER_NAME=${DOCKER_IMAGE_NAME////-}
 
 echo
 echo "Using DOCKER_IMAGE_DIR:       $DOCKER_IMAGE_DIR"

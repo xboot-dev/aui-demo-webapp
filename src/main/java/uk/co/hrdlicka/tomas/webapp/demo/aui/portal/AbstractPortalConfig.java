@@ -1,4 +1,4 @@
-/* Copyright 2016 Tomas Hrdlicka <tomas@hrdlicka.co.uk>. All rights reserved.
+/* Copyright 2016, 2018 Tomas Hrdlicka <tomas@hrdlicka.co.uk>. All rights reserved.
  */
 
 package uk.co.hrdlicka.tomas.webapp.demo.aui.portal;
@@ -18,7 +18,7 @@ public abstract class AbstractPortalConfig implements PortalConfig {
 
 	public static final String PORTAL_NAME = "XBOOT's Portal";
 	public static final String PORTAL_LOGO_TEXT = "XBOOT";
-	public static final String PORTAL_COPYRIGHT = "Copyright (c) 2016 Tomas Hrdlicka";
+	public static final String PORTAL_COPYRIGHT = "Copyright (c) 2018 Tomas Hrdlicka";
 
     protected PortalNavigation portalNavigation;
     protected PortalResourceManager portalResourceManager;

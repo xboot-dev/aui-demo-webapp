@@ -3,7 +3,7 @@
 ##########################################################################
 #                                                                        #
 # AUI Demo - Docker Build Image Script.                                  #
-# Copyright 2016 Tomas Hrdlicka <tomas@hrdlicka.co.uk>.                  #
+# Copyright 2016, 2018 Tomas Hrdlicka <tomas@hrdlicka.co.uk>.            #
 # All rights reserved.                                                   #
 #                                                                        #
 # Web: https://tomas.hrdlicka.co.uk                                      #
@@ -15,7 +15,7 @@ DOCKER_CMD=docker
 DOCKER_IMAGE_DIR="$( cd "$(dirname "$0")" ; pwd -P )/.."
 DOCKER_IMAGE_NAME=xboot/aui-demo
 DOCKER_IMAGE_TAG=1.0.0
-DOCKER_CONTAINER_NAME=${DOCKER_IMAGE_NAME////-}-dev
+DOCKER_CONTAINER_NAME=${DOCKER_IMAGE_NAME////-}
 
 echo
 echo "Using DOCKER_IMAGE_DIR:       $DOCKER_IMAGE_DIR"
@@ -24,11 +24,11 @@ echo "Using DOCKER_IMAGE_TAG:       $DOCKER_IMAGE_TAG"
 echo "Using DOCKER_CONTAINER_NAME:  $DOCKER_CONTAINER_NAME"
 echo
 
-DOCKER_CONTAINER_STATUS=`docker inspect --format={{.State.Status}} $DOCKER_CONTAINER_NAME`
+DOCKER_CONTAINER_STATUS=`$DOCKER_CMD inspect --format={{.State.Status}} $DOCKER_CONTAINER_NAME`
 
 if [ "$DOCKER_CONTAINER_STATUS" = "running" ]; then
     $DOCKER_CMD stop $DOCKER_CONTAINER_NAME
-    DOCKER_CONTAINER_STATUS=`docker inspect --format={{.State.Status}} $DOCKER_CONTAINER_NAME`
+    DOCKER_CONTAINER_STATUS=`$DOCKER_CMD inspect --format={{.State.Status}} $DOCKER_CONTAINER_NAME`
 fi
 
 if [ "$DOCKER_CONTAINER_STATUS" = "exited" ] || [ "$DOCKER_CONTAINER_STATUS" = "created" ]; then

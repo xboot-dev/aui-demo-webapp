@@ -1,4 +1,4 @@
-/* Copyright 2016 Tomas Hrdlicka <tomas@hrdlicka.co.uk>. All rights reserved.
+/* Copyright 2016, 2018 Tomas Hrdlicka <tomas@hrdlicka.co.uk>. All rights reserved.
  */
 
 package uk.co.hrdlicka.tomas.webapp.demo.aui.portal;
@@ -39,7 +39,7 @@ public class DefaultPortalConfig extends AbstractPortalConfig {
 	}
 
 	protected String getCopyrightHtml() {
-		String html = "Copyright &copy; 2016 <a href=\"http://tomas.hrdlicka.co.uk\" title=\"Tomas Xboot Hrdlicka\">Tomas Hrdlicka</a>";
+		String html = "Copyright &copy; 2018 <a href=\"http://tomas.hrdlicka.co.uk\" title=\"Tomas Xboot Hrdlicka\">Tomas Hrdlicka</a>";
 		return html;
 	}
 
@@ -76,16 +76,16 @@ public class DefaultPortalConfig extends AbstractPortalConfig {
 		NavigationItem niConfluence = new NavigationItem();
 		niConfluence.setKey("nsys-portal_appswitcher_confluence");
 		niConfluence.setLabel("Confluence");
-		niConfluence.setLink("http://confluence.nsys.org");
+		niConfluence.setLink("https://confluence.nsys.org");
 		niConfluence.setWeight(0);
 		getPortalNavigation().addItem(PortalNavigationSystem.NAVIGATION_APPSWITCHER, niConfluence);
 
-		NavigationItem niTeamCity = new NavigationItem();
-		niTeamCity.setKey("nsys-portal_appswitcher_teamcity");
-		niTeamCity.setLabel("TeamCity");
-		niTeamCity.setLink("https://teamcity.nsys.org");
-		niTeamCity.setWeight(0);
-		getPortalNavigation().addItem(PortalNavigationSystem.NAVIGATION_APPSWITCHER, niTeamCity);
+		NavigationItem niGitLab = new NavigationItem();
+		niGitLab.setKey("nsys-portal_appswitcher_gitlab");
+		niGitLab.setLabel("GitLab");
+		niGitLab.setLink("https://gitlab.nsys.org");
+		niGitLab.setWeight(0);
+		getPortalNavigation().addItem(PortalNavigationSystem.NAVIGATION_APPSWITCHER, niGitLab);
 	}
 
 	protected void createNavigationMain() {
@@ -215,35 +215,35 @@ public class DefaultPortalConfig extends AbstractPortalConfig {
 		NavigationItem niNsysPlatform = new NavigationItem();
 		niNsysPlatform.setKey("nsys-portal_header-links_help_nsys-platform");
 		niNsysPlatform.setLabel("Nsys Platform");
-		niNsysPlatform.setLink("http://doc.nsys.org/display/NSYS");
+		niNsysPlatform.setLink("https://doc.nsys.org/display/NSYS");
 		niNsysPlatform.setWeight(0);
 		getPortalNavigation().addItem(PortalNavigationSystem.NAVIGATION_HELP_LINKS, niNsysPlatform);
 
 		NavigationItem niNsysDaemon = new NavigationItem();
 		niNsysDaemon.setKey("nsys-portal_header-links_help_nsys-daemon");
 		niNsysDaemon.setLabel("Nsys Daemon");
-		niNsysDaemon.setLink("http://doc.nsys.org/display/NSYS/Nsys+Daemon");
+		niNsysDaemon.setLink("https://doc.nsys.org/display/NSYS/Nsys+Daemon");
 		niNsysDaemon.setWeight(0);
 		getPortalNavigation().addItem(PortalNavigationSystem.NAVIGATION_HELP_LINKS, niNsysDaemon);
 
 		NavigationItem niNsysPortal = new NavigationItem();
 		niNsysPortal.setKey("nsys-portal_header-links_help_nsys-portal");
 		niNsysPortal.setLabel("Nsys Portal");
-		niNsysPortal.setLink("http://doc.nsys.org/display/NSYS/Nsys+Portal");
+		niNsysPortal.setLink("https://doc.nsys.org/display/NSYS/Nsys+Portal");
 		niNsysPortal.setWeight(0);
 		getPortalNavigation().addItem(PortalNavigationSystem.NAVIGATION_HELP_LINKS, niNsysPortal);
 
 		NavigationItem niNsysTerminal = new NavigationItem();
 		niNsysTerminal.setKey("nsys-portal_header-links_help_nsys-terminal");
 		niNsysTerminal.setLabel("Nsys Terminal");
-		niNsysTerminal.setLink("http://doc.nsys.org/display/NSYS/Nsys+Terminal");
+		niNsysTerminal.setLink("https://doc.nsys.org/display/NSYS/Nsys+Terminal");
 		niNsysTerminal.setWeight(0);
 		getPortalNavigation().addItem(PortalNavigationSystem.NAVIGATION_HELP_LINKS, niNsysTerminal);
 
 		NavigationItem niNsysApi = new NavigationItem();
 		niNsysApi.setKey("nsys-portal_header-links_help_nsys-api");
 		niNsysApi.setLabel("Nsys Remote API Reference");
-		niNsysApi.setLink("http://doc.nsys.org/display/NSYS/Nsys+Remote+API+Reference");
+		niNsysApi.setLink("https://doc.nsys.org/display/NSYS/Nsys+Remote+API+Reference");
 		niNsysApi.setWeight(0);
 		getPortalNavigation().addItem(PortalNavigationSystem.NAVIGATION_HELP_LINKS, niNsysApi);
 	}
@@ -267,14 +267,14 @@ public class DefaultPortalConfig extends AbstractPortalConfig {
 		NavigationItem niBuilds = new NavigationItem();
 		niBuilds.setKey("nsys-portal_footer-links_builds");
 		niBuilds.setLabel("Builds");
-		niBuilds.setLink("https://teamcity.nsys.org");
+		niBuilds.setLink("https://gitlab.nsys.org");
 		niBuilds.setWeight(0);
 		getPortalNavigation().addItem(PortalNavigationSystem.NAVIGATION_FOOTER_LINKS, niBuilds);
 
 		NavigationItem niDocumentation = new NavigationItem();
 		niDocumentation.setKey("nsys-portal_footer-links_doc");
 		niDocumentation.setLabel("Documentation");
-		niDocumentation.setLink("http://doc.nsys.org/display/NSYS");
+		niDocumentation.setLink("https://doc.nsys.org/display/NSYS");
 		niDocumentation.setWeight(0);
 		getPortalNavigation().addItem(PortalNavigationSystem.NAVIGATION_FOOTER_LINKS, niDocumentation);
 	}

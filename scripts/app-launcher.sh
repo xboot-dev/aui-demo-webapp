@@ -3,7 +3,7 @@
 ##########################################################################
 #                                                                        #
 # AUI Demo - Application Launcher Script.                                #
-# Copyright 2016 Tomas Hrdlicka <tomas@hrdlicka.co.uk>.                  #
+# Copyright 2016, 2018 Tomas Hrdlicka <tomas@hrdlicka.co.uk>.            #
 # All rights reserved.                                                   #
 #                                                                        #
 # Web: https://tomas.hrdlicka.co.uk                                      #

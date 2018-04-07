@@ -9,7 +9,7 @@
 ## Description
 
 AUI Demo is an example of AUI (Atlassian User Interface) implementation in a web application based on Spring framework.
-The code is based on source code of [Nsys Portal](http://nsys.org).
+The code is based on source code of [Nsys Portal](https://nsys.org).
 
 <img src="doc/images/aui-demo-01.png" width="700" height="410" alt="AUI Demo Screenshot" />
 <img src="doc/images/aui-demo-02.png" width="700" height="410" alt="AUI Demo Screenshot" />
@@ -53,4 +53,4 @@ $ ./scripts/stop-image.sh
 
 [1]: https://docs.atlassian.com/aui
 [2]: https://projects.spring.io/spring-framework
-[3]: http://nsys.org
+[3]: https://nsys.org
